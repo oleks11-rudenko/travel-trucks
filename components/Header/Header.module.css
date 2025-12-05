@@ -1,0 +1,30 @@
+.header {
+  background-color: #f7f7f7;
+}
+
+.headerWrapper {
+  display: flex;
+  gap: 450px;
+  padding: 28px 0;
+}
+
+.logoLink {
+  display: flex;
+}
+
+.logoIcon {
+  align-self: center;
+}
+
+.navigationList {
+  display: flex;
+  gap: 32px;
+}
+
+.navigationItem {
+  font-weight: 500;
+}
+
+.activeLink {
+  color: #d84343;
+}
