@@ -1,0 +1,38 @@
+.home {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 260px 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(/home.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.title {
+  color: #f7f7f7;
+  font-size: 48px;
+  line-height: 32px;
+  margin-bottom: 16px;
+}
+
+.text {
+  color: #f7f7f7;
+  font-size: 24px;
+  line-height: 32px;
+  margin-bottom: 40px;
+}
+
+.link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 173px;
+  padding: 16px 48px;
+  border-radius: 200px;
+  color: #fff;
+  background-color: #e44848;
+}
+
+.link:hover {
+  background-color: #d84343;
+}

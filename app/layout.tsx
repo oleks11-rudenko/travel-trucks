@@ -1,4 +1,3 @@
-import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import 'modern-normalize/modern-normalize.css';
 import './globals.css';
@@ -11,11 +10,6 @@ const inter = Inter({
   variable: '--font-inter',
   display: 'swap',
 });
-
-export const metadata: Metadata = {
-  title: 'TravelTrucks',
-  description: 'Campers of your dreams',
-};
 
 export default function RootLayout({
   children,

@@ -1,3 +1,3 @@
-export default function TruckDetails() {
-  return <div>Truck Details</div>;
+export default function CamperDetails() {
+  return <div>Camper Details</div>;
 }
