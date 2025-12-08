@@ -10,28 +10,36 @@ interface FilterFormProps {
 
 export default function FilterForm({ setFilters }: FilterFormProps) {
   const handleSubmit = (formData: FormData) => {
-    const entries = Object.fromEntries(formData.entries());
-    const values = Object.fromEntries(
-      Object.entries(entries).map(([key, value]) => [key, value === 'true' ? true : value])
+    const values = Object.fromEntries(formData);
+    const cleanedValues = Object.fromEntries(
+      Object.entries(values).filter(([key, value]) => value !== '')
     );
-    setFilters(values as Filters);
+    setFilters(cleanedValues);
   };
 
   return (
     <>
-      <h2 className={css.filters}>Filter</h2>
       <form className={css.filterForm} action={handleSubmit}>
+        <label className={css.locationLabel}>
+          Location
+          <svg className={css.locationIcon} width="20" height="20">
+            <use href="/icons.svg#map"></use>
+          </svg>
+          <input className={css.locationInput} type="text" placeholder="City" name="location" />
+        </label>
+
+        <h2 className={css.filters}>Filters</h2>
         <div className={css.equipment}>
-          <h3 className={css.equipmentTitle}>Vehicle equipment</h3>
-          <ul className={css.equipmentList}>
+          <h3 className={css.title}>Vehicle equipment</h3>
+          <ul className={css.list}>
             {vehicleEquipments.map((equipment) => (
-              <li className={css.equipmentItem} key={equipment.key}>
-                <label className={css.equipmentLabel}>
-                  <svg className={css.equipmentIcon} width="32" height="32">
+              <li className={css.item} key={equipment.key}>
+                <label className={css.label}>
+                  <svg className={css.icon} width="32" height="32">
                     <use href={`/icons.svg#${equipment.icon}`}></use>
                   </svg>
                   <input
-                    className={css.equipmentName}
+                    className={css.input}
                     type="checkbox"
                     name={equipment.key}
                     value={
@@ -48,15 +56,15 @@ export default function FilterForm({ setFilters }: FilterFormProps) {
         </div>
 
         <div className={css.type}>
-          <h3 className={css.typeTitle}>Vehicle type</h3>
-          <ul className={css.typeList}>
+          <h3 className={css.title}>Vehicle type</h3>
+          <ul className={css.list}>
             {vehicleTypes.map((type) => (
-              <li className={css.typeItem} key={type.key}>
-                <label className={css.typeLabel}>
-                  <svg className={css.typeIcon} width="32" height="32">
+              <li className={css.item} key={type.key}>
+                <label className={css.label}>
+                  <svg className={css.icon} width="32" height="32">
                     <use href={`/icons.svg#${type.icon}`}></use>
                   </svg>
-                  <input className={css.typeName} type="radio" name="form" value={type.key} />
+                  <input className={css.input} type="radio" name="form" value={type.key} />
                   {type.label}
                 </label>
               </li>
@@ -64,7 +72,9 @@ export default function FilterForm({ setFilters }: FilterFormProps) {
           </ul>
         </div>
 
-        <button type="submit">Search</button>
+        <button className={css.button} type="submit">
+          Search
+        </button>
       </form>
     </>
   );

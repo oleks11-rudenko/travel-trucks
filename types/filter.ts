@@ -1,14 +1,17 @@
+import { Camper } from './camper';
+
 export interface Filters {
-  form?: string;
-  transmission?: string;
-  engine?: string;
-  AC?: string | boolean;
-  bathroom?: string | boolean;
-  kitchen?: string | boolean;
-  TV?: string | boolean;
-  radio?: string | boolean;
-  refrigerator?: string | boolean;
-  microwave?: string | boolean;
-  gas?: string | boolean;
-  water?: string | boolean;
+  location?: Camper['location'];
+  form?: Camper['form'];
+  transmission?: Camper['transmission'];
+  engine?: Camper['engine'];
+  AC?: string;
+  bathroom?: string;
+  kitchen?: string;
+  TV?: string;
+  radio?: string;
+  refrigerator?: string;
+  microwave?: string;
+  gas?: string;
+  water?: string;
 }

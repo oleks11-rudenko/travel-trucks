@@ -2,8 +2,8 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import css from './Header.module.css';
 import Container from '../Container/Container';
+import css from './Header.module.css';
 
 export default function Header() {
   const pathname = usePathname();
@@ -19,14 +19,12 @@ export default function Header() {
           </Link>
           <nav className={css.navigation}>
             <ul className={css.navigationList}>
-              <li className={`${css.navigationItem} ${pathname === '/' ? css.activeLink : ''}`}>
+              <li className={`${css.navigationItem} ${pathname === '/' ? css.active : ''}`}>
                 <Link className={css.navigationLink} href="/">
                   Home
                 </Link>
               </li>
-              <li
-                className={`${css.navigationItem} ${pathname === '/catalog' ? css.activeLink : ''}`}
-              >
+              <li className={`${css.navigationItem} ${pathname === '/catalog' ? css.active : ''}`}>
                 <Link className={css.navigationLink} href="/catalog">
                   Catalog
                 </Link>
