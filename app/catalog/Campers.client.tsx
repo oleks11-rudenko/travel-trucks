@@ -28,7 +28,7 @@ export default function CampersClient() {
           </div>
           <div className={css.campers}>
             {data?.items && isSuccess && <CamperList campers={data.items} />}
-            <button className={css.loadMoreBtn}>Load More</button>{' '}
+            <button className={css.loadMoreBtn}>Load More</button>
           </div>
         </div>
       </Container>

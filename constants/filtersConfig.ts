@@ -6,8 +6,8 @@ export interface EquipmentFilter {
 }
 
 export const vehicleEquipments = [
-  { key: 'transmission', value: 'automatic', label: 'Automatic', icon: 'automatic' },
-  { key: 'engine', value: 'petrol', label: 'Petrol', icon: 'petrol' },
+  { key: 'transmission', value: 'automatic', label: 'Automatic', icon: 'transmission' },
+  { key: 'engine', value: 'petrol', label: 'Petrol', icon: 'engine' },
   { key: 'AC', value: true, label: 'AC', icon: 'ac' },
   { key: 'bathroom', value: true, label: 'Bathroom', icon: 'bathroom' },
   { key: 'kitchen', value: true, label: 'Kitchen', icon: 'kitchen' },

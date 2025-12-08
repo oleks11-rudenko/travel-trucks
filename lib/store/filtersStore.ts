@@ -1,6 +1,6 @@
-import { Filters } from '@/types/filter';
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
+import { Filters } from '@/types/filter';
 
 interface FiltersDraftStore {
   draftFilters: Filters;
