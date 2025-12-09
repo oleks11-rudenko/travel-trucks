@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { keepPreviousData, useInfiniteQuery } from '@tanstack/react-query';
+import { useInfiniteQuery } from '@tanstack/react-query';
 import { fetchCampers } from '@/lib/api/clientApi';
 import Container from '@/components/Container/Container';
 import FilterForm from '@/components/FilterForm/FilterForm';
@@ -26,7 +26,9 @@ export default function CampersClient() {
       refetchOnMount: false,
     });
   const allCampers = data?.pages.flatMap((page) => page.items) || [];
-  return (
+  return isLoading ? (
+    <Loader />
+  ) : (
     <section className={css.catalog}>
       <Container>
         <div className={css.catalogWrapper}>
