@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: --font-inter, sans-serif;
+  font-family: Inter, --font-inter, sans-serif;
   color: #101828;
   background-color: #ffffff;
   line-height: 1.5;

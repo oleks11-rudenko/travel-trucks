@@ -1,11 +1,11 @@
-import Link from 'next/link';
 import Image from 'next/image';
 import { Camper } from '@/types/camper';
-import { vehicleEquipments } from '@/constants/filtersConfig';
+
 import { useFavouriteTruckStore } from '@/lib/store/favouriteStore';
 import RatingAndLocation from '../RatingAndLocation/RatingAndLocation';
 import css from './CamperList.module.css';
 import LinkBtn from '../Link/LinkBtn';
+import EquipmentList from '../EquipmentList/EquipmentList';
 
 interface CamperListProps {
   campers: Camper[];
@@ -17,17 +17,6 @@ export default function CamperList({ campers }: CamperListProps) {
   return (
     <ul className={css.list}>
       {campers.map((camper) => {
-        const camperEquipment = vehicleEquipments.filter((equip) => {
-          const camperValue = camper[equip.key as keyof Camper];
-          if (typeof equip.value === 'string') {
-            return true;
-          }
-          if (typeof equip.value === 'boolean') {
-            return camperValue === equip.value;
-          }
-          return false;
-        });
-        const visibleEquipment = camperEquipment.slice(0, 6);
         const isFavourite = favourites.some((item) => item.id === camper.id);
         return (
           <li className={css.item} key={camper.id}>
@@ -58,30 +47,7 @@ export default function CamperList({ campers }: CamperListProps) {
                 <RatingAndLocation camper={camper} />
               </div>
               <p className={css.description}>{camper.description.slice(0, 68)}...</p>
-              <ul className={css.equipmentList}>
-                {visibleEquipment.map((equip) => {
-                  if (typeof equip.value === 'string') {
-                    return (
-                      <li className={css.equipmentItem} key={equip.key}>
-                        <svg className={css.equipmentIcon} width="20" height="20">
-                          <use href={`/icons.svg#${equip.icon}`}></use>
-                        </svg>
-                        <span className={css.equipmentText}>
-                          {camper[equip.key as keyof Camper] as string}
-                        </span>
-                      </li>
-                    );
-                  }
-                  return (
-                    <li className={css.equipmentItem} key={equip.key}>
-                      <svg className={css.equipmentIcon} width="20" height="20">
-                        <use href={`/icons.svg#${equip.icon}`}></use>
-                      </svg>
-                      <span className={css.equipmentText}>{equip.label}</span>
-                    </li>
-                  );
-                })}
-              </ul>
+              <EquipmentList camper={camper} showEquip={6} />
               <LinkBtn horizontalPaddings="40px" href={`/catalog/${camper.id}`}>
                 Show more
               </LinkBtn>
