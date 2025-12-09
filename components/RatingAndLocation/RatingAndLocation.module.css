@@ -1,0 +1,22 @@
+.ratingAndLocation {
+  display: flex;
+  gap: 16px;
+}
+
+.ratingAndLocationWrapper {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.mapIcon {
+  fill: #101828;
+}
+
+.starIconFilled {
+  fill: #ffc531;
+}
+
+.starIconNotFilled {
+  fill: #f2f4f7;
+}

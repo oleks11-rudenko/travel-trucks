@@ -25,21 +25,23 @@ export default function CampersClient() {
       },
       refetchOnMount: false,
     });
+
   const allCampers = data?.pages.flatMap((page) => page.items) || [];
-  return isLoading ? (
-    <Loader />
-  ) : (
-    <section className={css.catalog}>
+
+  if (isLoading) return <Loader />;
+
+  return (
+    <main className={css.catalog}>
       <Container>
         <div className={css.catalogWrapper}>
-          <div className={css.filtration}>
+          <section className={css.filtration}>
             <FilterForm setFilters={setFilters} />
-          </div>
+          </section>
           {isSuccess && allCampers.length === 0 && (
             <p className={css.notFound}>No campers found with these filters</p>
           )}
           {allCampers.length > 0 && (
-            <div className={css.campers}>
+            <section className={css.campers}>
               <CamperList campers={allCampers} />
               {hasNextPage && (
                 <button
@@ -53,11 +55,11 @@ export default function CampersClient() {
               {!hasNextPage && allCampers.length > 0 && (
                 <p className={css.endMessage}>No more campers</p>
               )}
-            </div>
+            </section>
           )}
           {isError && <p className={css.error}>Something went wrong!</p>}
         </div>
       </Container>
-    </section>
+    </main>
   );
 }

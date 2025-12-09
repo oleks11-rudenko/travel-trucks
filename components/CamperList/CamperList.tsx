@@ -2,8 +2,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Camper } from '@/types/camper';
 import { vehicleEquipments } from '@/constants/filtersConfig';
-import css from './CamperList.module.css';
 import { useFavouriteTruckStore } from '@/lib/store/favouriteStore';
+import RatingAndLocation from '../RatingAndLocation/RatingAndLocation';
+import css from './CamperList.module.css';
+import LinkBtn from '../Link/LinkBtn';
 
 interface CamperListProps {
   campers: Camper[];
@@ -53,28 +55,7 @@ export default function CamperList({ campers }: CamperListProps) {
                     </button>
                   </div>
                 </div>
-                <div className={css.ratingAndLocation}>
-                  <div className={css.ratingAndLocationWrapper}>
-                    <svg
-                      className={
-                        camper.reviews.length > 0 ? css.starIconFilled : css.starIconNotFilled
-                      }
-                      width="16"
-                      height="16"
-                    >
-                      <use href="/icons.svg#star"></use>
-                    </svg>
-                    <p
-                      className={css.reviewsAndLocationText}
-                    >{`${camper.rating}(${camper.reviews.length} Reviews)`}</p>
-                  </div>
-                  <div className={css.ratingAndLocationWrapper}>
-                    <svg className={css.mapIcon} width="16" height="16">
-                      <use href="/icons.svg#map"></use>
-                    </svg>
-                    <p className={css.reviewsAndLocationText}>{camper.location}</p>
-                  </div>
-                </div>
+                <RatingAndLocation camper={camper} />
               </div>
               <p className={css.description}>{camper.description.slice(0, 68)}...</p>
               <ul className={css.equipmentList}>
@@ -101,9 +82,9 @@ export default function CamperList({ campers }: CamperListProps) {
                   );
                 })}
               </ul>
-              <Link className={css.button} href={`/catalog/${camper.id}`}>
+              <LinkBtn horizontalPaddings="40px" href={`/catalog/${camper.id}`}>
                 Show more
-              </Link>
+              </LinkBtn>
             </div>
           </li>
         );

@@ -4,6 +4,7 @@ import { vehicleEquipments, vehicleTypes } from '@/constants/filtersConfig';
 import { Filters } from '@/types/filter';
 import css from './FilterForm.module.css';
 import { useFilterDraftStore } from '@/lib/store/filtersStore';
+import Button from '../Button/Button';
 
 interface FilterFormProps {
   setFilters: (values: Filters) => void;
@@ -110,9 +111,9 @@ export default function FilterForm({ setFilters }: FilterFormProps) {
           </ul>
         </div>
 
-        <button className={css.button} type="submit">
+        <Button horizontalPaddings="56px" type="submit">
           Search
-        </button>
+        </Button>
       </form>
     </>
   );

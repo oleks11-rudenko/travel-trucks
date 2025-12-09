@@ -1,6 +1,6 @@
 import Container from '@/components/Container/Container';
+import LinkBtn from '@/components/Link/LinkBtn';
 import css from './Home.module.css';
-import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -8,9 +8,9 @@ export default function Home() {
       <Container>
         <h1 className={css.title}>Campers of your dreams</h1>
         <h2 className={css.text}> You can find everything you want in our catalog</h2>
-        <Link className={css.link} href="/catalog">
+        <LinkBtn horizontalPaddings="48px" href="/catalog">
           View Now
-        </Link>
+        </LinkBtn>
       </Container>
     </section>
   );

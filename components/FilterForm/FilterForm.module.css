@@ -106,17 +106,3 @@
 .type {
   margin-bottom: 40px;
 }
-
-.button {
-  width: 166px;
-  padding: 16px 56px;
-  background-color: #e44848;
-  border: none;
-  border-radius: 200px;
-  color: #fff;
-  transition: background-color 0.4s ease;
-}
-
-.button:hover {
-  background-color: #d84343;
-}

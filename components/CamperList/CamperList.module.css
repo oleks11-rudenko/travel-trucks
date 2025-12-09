@@ -6,7 +6,7 @@
 
 .item {
   display: flex;
-  min-width: 888px;
+  width: 888px;
   padding: 24px;
   gap: 24px;
   border: 1px solid #dadde1;
@@ -16,13 +16,6 @@
 .image {
   object-fit: cover;
   border-radius: 10px;
-}
-
-.generalInfo {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  gap: 24px;
 }
 
 .namePriceAndFavourite {
@@ -67,36 +60,15 @@
   transition: fill 0.4s ease;
 }
 
-.ratingAndLocation {
-  display: flex;
-  gap: 16px;
-}
-
-.ratingAndLocationWrapper {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.mapIcon {
-  fill: #101828;
-}
-
-.starIconFilled {
-  fill: #ffc531;
-}
-
-.starIconNotFilled {
-  fill: #f2f4f7;
-}
-
 .description {
+  margin-top: 24px;
   max-width: 525px;
   max-height: 24px;
   color: #475467;
 }
 
 .equipmentList {
+  margin: 24px 0;
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
@@ -119,18 +91,4 @@
 .equipmentText {
   font-family: Inter;
   font-weight: 500;
-}
-
-.button {
-  max-width: 166px;
-  padding: 16px 40px;
-  border-radius: 200px;
-  background-color: #e44848;
-  color: #ffffff;
-  font-weight: 500;
-  transition: background-color 0.4s ease;
-}
-
-.button:hover {
-  background-color: #d84343;
 }
