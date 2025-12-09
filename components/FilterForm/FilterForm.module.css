@@ -96,14 +96,11 @@
   border: 1px solid #dadde1;
   border-radius: 12px;
   cursor: pointer;
+  transition: border-color 0.4s ease;
 }
 
 .label:has(input:checked) {
   border-color: #e44848;
-}
-
-.input:has(input:checked) {
-  border: 1px solid #e44848;
 }
 
 .type {
@@ -117,6 +114,7 @@
   border: none;
   border-radius: 200px;
   color: #fff;
+  transition: background-color 0.4s ease;
 }
 
 .button:hover {
