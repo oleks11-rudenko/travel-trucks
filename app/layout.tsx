@@ -22,6 +22,7 @@ export default function RootLayout({
         <TanStackProvider>
           <Header />
           <main>{children}</main>
+          <div id="datepicker-portal"></div>
         </TanStackProvider>
       </body>
     </html>

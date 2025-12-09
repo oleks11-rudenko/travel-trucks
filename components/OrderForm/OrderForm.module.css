@@ -1,0 +1,41 @@
+.formWrapper {
+  max-width: 641px;
+  width: 100%;
+  min-height: 588px;
+  padding: 44px 57px;
+  border-radius: 10px;
+  border: 1px solid #dadde1;
+}
+
+.title {
+  margin-bottom: 8px;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.text {
+  margin-bottom: 24px;
+  color: #6c717b;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.formItem {
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+  background-color: #f7f7f7;
+  padding: 18px;
+}
+
+.textarea {
+  min-height: 118px;
+}
+
+.button {
+  margin-top: 10px;
+}
