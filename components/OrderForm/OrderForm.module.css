@@ -1,7 +1,6 @@
 .formWrapper {
   position: relative;
-  max-width: 641px;
-  width: 100%;
+  min-width: 641px;
   min-height: 588px;
   padding: 44px 57px;
   border-radius: 10px;
