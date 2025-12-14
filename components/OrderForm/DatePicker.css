@@ -1,0 +1,90 @@
+.react-datepicker {
+  font-family: 'Inter', sans-serif; /* Або ваш шрифт */
+  font-size: 16px;
+  border: 1px solid #dadde1;
+  border-radius: 12px;
+  background-color: #fff;
+  padding: 16px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  color: #101828;
+}
+
+/* Прибираємо стандартний жовтий/синій фон хедера */
+.react-datepicker__header {
+  background-color: #fff;
+  border-bottom: 1px solid #dadde1; /* Лінія під днями тижня */
+  padding-top: 0;
+}
+
+/* Назва місяця (February 2024) */
+.react-datepicker__current-month {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #101828;
+}
+
+/* Назви днів тижня (MON, TUE...) */
+.react-datepicker__day-name {
+  color: #475467;
+  font-weight: 500;
+  width: 2.5rem; /* Ширина комірки */
+  line-height: 2.5rem;
+  margin: 0.2rem;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+/* Комірки з датами */
+.react-datepicker__day {
+  width: 2.5rem;
+  line-height: 2.5rem;
+  margin: 0.2rem;
+  font-size: 16px;
+  color: #101828;
+}
+
+/* При наведенні на дату */
+.react-datepicker__day:hover {
+  border-radius: 50%;
+  background-color: #f2f4f7;
+}
+
+/* Обрана дата (темний круг) */
+.react-datepicker__day--selected,
+.react-datepicker__day--keyboard-selected {
+  background-color: #475467 !important; /* Темно-сірий колір з макету */
+  color: #fff !important;
+  border-radius: 50% !important;
+}
+
+/* Вимикаємо стилі для поточної дати, якщо вона не обрана (щоб не було рамок) */
+.react-datepicker__day--today {
+  font-weight: normal;
+  border: none;
+}
+
+/* Стрілочки навігації (вліво/вправо) */
+.react-datepicker__navigation {
+  top: 28px; /* Підганяємо по висоті */
+}
+
+/* Стилізація іконок стрілок */
+.react-datepicker__navigation-icon::before {
+  border-color: #101828;
+  border-width: 2px 2px 0 0;
+  height: 9px;
+  width: 9px;
+}
+
+/* Трикутник зверху (стрілочка поповеру) */
+.react-datepicker__triangle {
+  display: none; /* Можна приховати, якщо на макеті його нема, або стилізувати */
+}
+/* Якщо трикутник потрібен, розкоментуйте та налаштуйте fill:
+.react-datepicker-popper[data-placement^="bottom"] .react-datepicker__triangle {
+  fill: #fff;
+  color: #fff;
+  stroke: #dadde1;
+} 
+*/

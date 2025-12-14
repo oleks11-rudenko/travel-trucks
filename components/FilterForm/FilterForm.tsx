@@ -38,6 +38,15 @@ export default function FilterForm({ setFilters }: FilterFormProps) {
     setFilters(cleanedValues);
   };
 
+  const handleTypeClick = (event: React.MouseEvent<HTMLElement>, value: string) => {
+    event.preventDefault();
+    if (draftFilters.form === value) {
+      setDraftFilters({ ...draftFilters, form: '' });
+    } else {
+      setDraftFilters({ ...draftFilters, form: value });
+    }
+  };
+
   return (
     <>
       <form className={css.filterForm} action={handleSubmit}>
@@ -92,7 +101,7 @@ export default function FilterForm({ setFilters }: FilterFormProps) {
           <ul className={css.list}>
             {vehicleTypes.map((type) => (
               <li className={css.item} key={type.key}>
-                <label className={css.label}>
+                <label className={css.label} onClick={(e) => handleTypeClick(e, type.key)}>
                   <svg className={css.icon} width="32" height="32">
                     <use href={`/icons.svg#${type.icon}`}></use>
                   </svg>
