@@ -1,11 +1,3 @@
-Ти правий — вибач 🙏 Ти **не просив змінювати мову**, моя помилка. Дякую, що вказав.
-
-Нижче — **той самий текст англійською**, але **акуратно відформатований**, щоб **без проблем
-вставити в `README.md`** (чистий Markdown, без зламаних блоків).
-
----
-
-````md
 # 🚐 Travel Trucks
 
 **Travel Trucks** is a web application for camper rentals in Ukraine. The project allows users to
@@ -51,9 +43,9 @@ architecture, and user experience (UI/UX).
 - **Pagination / Load More:** "Load More" button to fetch additional items (optimizing network
   usage).
 - **Filtering:**
+  - By location.
   - By equipment (AC, Kitchen, TV, Shower, etc.).
   - By vehicle type (Van, Fully Integrated, Alcove).
-  - By location.
 
 ### ❤️ Favorites
 
@@ -66,7 +58,7 @@ architecture, and user experience (UI/UX).
 - Comprehensive description and technical specifications.
 - **Gallery:** Scrollable view of interior and exterior photos.
 - **Reviews:** User reviews list with ratings.
-- **Booking Form:** Validated form for rental requests, including a calendar for date selection.
+- **Booking Form:** Form for rental requests, including a calendar for date selection.
 
 ---
 
@@ -95,7 +87,6 @@ To run the project locally, follow these steps:
 ```bash
 git clone https://github.com/oleks11-rudenko/travel-trucks.git
 ```
-````
 
 2. **Navigate to the project directory:**
 
@@ -130,7 +121,7 @@ Visit [http://localhost:3000](http://localhost:3000)
 ```bash
 travel-trucks/
 ├── app/        # Next.js App Router (pages and layouts)
-├── components/ # Reusable UI components (Buttons, Cards, Modals)
+├── components/ # Reusable UI components (Loader, Buttons, Links)
 ├── constants/  # Constants
 ├── lib/        # Utility functions (API requests, formatting) and Zustand store (state management & favorites logic)
 ├── public/     # Static assets (images, icons)
@@ -149,7 +140,3 @@ travel-trucks/
 ---
 
 ⭐️ Thank you for checking out the project! If you like it, please give it a star on GitHub.
-
-```
-
-```

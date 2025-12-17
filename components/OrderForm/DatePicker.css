@@ -1,90 +1,123 @@
-.react-datepicker {
-  font-family: 'Inter', sans-serif; /* Або ваш шрифт */
-  font-size: 16px;
-  border: 1px solid #dadde1;
+.react-datepicker-wrapper,
+.react-datepicker__input-container {
+  display: block;
+  width: 100%;
+}
+
+.custom-datepicker {
+  border: 1px solid #475467;
   border-radius: 12px;
-  background-color: #fff;
-  padding: 16px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 12px;
+  width: 276px;
+}
+
+.react-datepicker__month-container {
+  float: none;
+  margin: 0;
+  padding: 0;
+}
+
+.custom-datepicker .react-datepicker__header {
+  background-color: #ffffff;
+  border-bottom: none;
+  padding: 0;
+}
+
+.custom-datepicker .react-datepicker__current-month {
   color: #101828;
-}
-
-/* Прибираємо стандартний жовтий/синій фон хедера */
-.react-datepicker__header {
-  background-color: #fff;
-  border-bottom: 1px solid #dadde1; /* Лінія під днями тижня */
-  padding-top: 0;
-}
-
-/* Назва місяця (February 2024) */
-.react-datepicker__current-month {
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 20px;
-  color: #101828;
-}
-
-/* Назви днів тижня (MON, TUE...) */
-.react-datepicker__day-name {
-  color: #475467;
-  font-weight: 500;
-  width: 2.5rem; /* Ширина комірки */
-  line-height: 2.5rem;
-  margin: 0.2rem;
-  text-transform: uppercase;
-  font-size: 14px;
-}
-
-/* Комірки з датами */
-.react-datepicker__day {
-  width: 2.5rem;
-  line-height: 2.5rem;
-  margin: 0.2rem;
+  font-family: Inter;
   font-size: 16px;
-  color: #101828;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 12px;
 }
 
-/* При наведенні на дату */
-.react-datepicker__day:hover {
+.custom-datepicker .react-datepicker__day-names {
+  box-sizing: border-box;
+  border-bottom: 1px solid #475467;
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  margin-left: -12px;
+  margin-right: -12px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.custom-datepicker .react-datepicker__day-name {
+  color: #475467;
+  font-family: Inter;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.2;
+  width: 100%;
+}
+
+.custom-datepicker .react-datepicker__month {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.custom-datepicker .react-datepicker__week {
+  display: flex;
+}
+
+.custom-datepicker .react-datepicker__day {
+  margin: 0;
+  text-align: center;
+  font-family: Inter;
+  font-size: 14px;
+  line-height: 1.2;
+  display: flex;
+  width: 36px;
+  height: 32px;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-datepicker .react-datepicker__day:hover {
   border-radius: 50%;
-  background-color: #f2f4f7;
 }
 
-/* Обрана дата (темний круг) */
-.react-datepicker__day--selected,
-.react-datepicker__day--keyboard-selected {
-  background-color: #475467 !important; /* Темно-сірий колір з макету */
-  color: #fff !important;
-  border-radius: 50% !important;
+.custom-datepicker .react-datepicker__day--selected,
+.custom-datepicker .react-datepicker__day--keyboard-selected {
+  background-color: #475467;
+  color: #ffffff;
+  border-radius: 50%;
 }
 
-/* Вимикаємо стилі для поточної дати, якщо вона не обрана (щоб не було рамок) */
-.react-datepicker__day--today {
-  font-weight: normal;
+.custom-datepicker .react-datepicker__day--today {
+  color: #ffffff;
   border: none;
 }
 
-/* Стрілочки навігації (вліво/вправо) */
-.react-datepicker__navigation {
-  top: 28px; /* Підганяємо по висоті */
+.custom-datepicker .react-datepicker__day--outside-month {
+  color: #475467;
+  pointer-events: none;
 }
 
-/* Стилізація іконок стрілок */
-.react-datepicker__navigation-icon::before {
+.custom-datepicker .react-datepicker__navigation {
+  top: 7px;
+}
+
+.custom-datepicker .react-datepicker__navigation-icon::before {
   border-color: #101828;
   border-width: 2px 2px 0 0;
-  height: 9px;
-  width: 9px;
+  height: 10px;
+  width: 10px;
 }
 
-/* Трикутник зверху (стрілочка поповеру) */
-.react-datepicker__triangle {
-  display: none; /* Можна приховати, якщо на макеті його нема, або стилізувати */
+.react-datepicker-popper[data-placement^='top'] .react-datepicker__triangle {
+  color: #ffffff;
+  fill: #ffffff;
+  stroke: #475467;
 }
-/* Якщо трикутник потрібен, розкоментуйте та налаштуйте fill:
-.react-datepicker-popper[data-placement^="bottom"] .react-datepicker__triangle {
-  fill: #fff;
-  color: #fff;
-  stroke: #dadde1;
-} 
-*/
+
+.react-datepicker-popper[data-placement^='bottom'] .react-datepicker__triangle {
+  color: #ffffff;
+  fill: #ffffff;
+  stroke: #475467;
+}

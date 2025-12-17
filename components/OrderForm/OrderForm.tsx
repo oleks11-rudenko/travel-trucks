@@ -50,78 +50,24 @@ export default function OrderForm() {
           />
           <input className={`${css.formItem} ${css.input}`} type="email" placeholder="Email*" />
 
-          <DatePicker
-            selected={startDate}
-            onChange={(date) => {
-              setStartDate(date);
-              setIsError(false);
-            }}
-            minDate={new Date()}
-            placeholderText={placeholderText}
-            className={css.formItem}
-            dateFormat="dd/MM/yyyy"
-            onCalendarOpen={handleCalendarOpen}
-            portalId="datepicker-portal"
-            calendarStartDay={1}
-            formatWeekDay={(nameOfDay) => nameOfDay.substr(0, 3).toUpperCase()}
-            renderCustomHeader={({
-              date,
-              decreaseMonth,
-              increaseMonth,
-              prevMonthButtonDisabled,
-              nextMonthButtonDisabled,
-            }) => (
-              <div className="custom-header">
-                <button
-                  className="nav-btn"
-                  onClick={decreaseMonth}
-                  disabled={prevMonthButtonDisabled}
-                  type="button"
-                >
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M15 19L8 12L15 5"
-                      stroke="#101828"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </button>
-                <span className="month-title">
-                  {date.toLocaleString('en-US', { month: 'long', year: 'numeric' })}
-                </span>
-                <button
-                  className="nav-btn"
-                  onClick={increaseMonth}
-                  disabled={nextMonthButtonDisabled}
-                  type="button"
-                >
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M9 5L16 12L9 19"
-                      stroke="#101828"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </button>
-              </div>
-            )}
-          />
+          <div className={css.datePickerWrapper}>
+            <DatePicker
+              selected={startDate}
+              onChange={(date) => {
+                setStartDate(date);
+                setIsError(false);
+              }}
+              minDate={new Date()}
+              placeholderText={placeholderText}
+              className={css.formItem}
+              calendarClassName="custom-datepicker"
+              dateFormat="dd/MM/yyyy"
+              onCalendarOpen={handleCalendarOpen}
+              portalId="datepicker-portal"
+              calendarStartDay={1}
+              formatWeekDay={(nameOfDay) => nameOfDay.substr(0, 3).toUpperCase()}
+            />
+          </div>
 
           <textarea className={`${css.formItem} ${css.textarea}`} placeholder="Comment" />
           <div className={css.button}>
