@@ -1,8 +1,8 @@
 # 🚐 Travel Trucks
 
-**Travel Trucks** is a web application for camper rentals in Ukraine. The project allows users to
-browse a catalog of recreational vehicles (RVs), filter them by features, add them to favorites, and
-book the trip of their dreams.
+**Travel Trucks** is a web application for camper rentals. The project allows users to browse a
+catalog of recreational vehicles (RVs), filter them by features, add them to favorites, and book the
+trip of their dreams.
 
 🔗 **Live Demo:** https://travel-trucks-kohl-beta.vercel.app/
 
@@ -10,12 +10,12 @@ book the trip of their dreams.
 
 ## 📋 Table of Contents
 
-- [About](#about)
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [Installation & Setup](#installation--setup)
-- [Project Structure](#project-structure)
-- [Author](#author)
+- [About](#-about)
+- [Features](#-features)
+- [Tech Stack](#-tech-stack)
+- [Installation & Setup](#-installation--setup)
+- [Project Structure](#-project-structure)
+- [Author](#-author)
 
 ---
 
@@ -39,9 +39,10 @@ architecture, and user experience (UI/UX).
 
 ### 🚐 Catalog
 
-- **Card Display:** A list of available campers with photos, pricing, ratings, and descriptions.
+- **Card Display:** A list of available campers with photos, pricing, ratings, features and
+  descriptions.
 - **Pagination / Load More:** "Load More" button to fetch additional items (optimizing network
-  usage).
+  usage) if items exist.
 - **Filtering:**
   - By location.
   - By equipment (AC, Kitchen, TV, Shower, etc.).
@@ -56,9 +57,9 @@ architecture, and user experience (UI/UX).
 ### 📝 Camper Details
 
 - Comprehensive description and technical specifications.
-- **Gallery:** Scrollable view of interior and exterior photos.
+- **Gallery:** View of interior and exterior photos.
 - **Reviews:** User reviews list with ratings.
-- **Booking Form:** Form for rental requests, including a calendar for date selection.
+- **Booking Form:** Form for rental requests, including a custom calendar for date selection.
 
 ---
 
@@ -69,11 +70,11 @@ The project is built on **Next.js** using **TypeScript**.
 - **Core:** Next.js 14+, React
 - **Language:** TypeScript
 - **State Management:** Zustand (with `persist` middleware for favorites)
-- **Backend / API:** MockAPI (data source for campers and reviews)
+- **Backend / API:** MockAPI (data source for campers)
 - **Styling:** CSS Modules
-- **Forms:** React Hook Form
+- **Forms:** Default forms
 - **HTTP Client:** Axios
-- **UI Components:** Custom reusable components + SVG icons
+- **UI Components:** Custom reusable components, SVG icons
 - **Deployment:** Vercel
 
 ---
@@ -104,13 +105,19 @@ yarn install
 pnpm install
 ```
 
-4. **Start the development server:**
+4. **Create .env file in root directory next to the /app folder and specify there:**
+
+```bash
+NEXT_PUBLIC_API_URL=http://localhost:3000
+```
+
+5. **Start the development server:**
 
 ```bash
 npm run dev
 ```
 
-5. **Open in browser:**
+6. **Open in browser:**
 
 Visit [http://localhost:3000](http://localhost:3000)
 
